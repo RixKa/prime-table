@@ -24,6 +24,10 @@ class TestInputHandler(object):
 
 
 class TestInputValidation(object):
+    def test_n_equals_0(self):
+        n = 0
+        assert not validate_input(n)
+
     def test_n_is_int(self):
         n = random.randint(1, 100)
         assert validate_input(n)
