@@ -19,6 +19,11 @@ Installation instructions.
 
 `make venv`
 
+## Run
+Run instructions.
+
+`make run`
+
 ## Testing
 Testing instructions.
 

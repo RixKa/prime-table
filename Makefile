@@ -16,6 +16,7 @@ help:
 	@echo '    make venv         install the package in a virtual environment'
 	@echo '    make reset        recreate the virtual environment'
 	@echo '    make test         run the test suite, report coverage'
+	@echo '    make run         run main.py'
 	@echo '    make clean        cleanup all temporary files'
 	@echo '    make clean-pyc    cleanup all python file artifacts'
 	@echo '    make clean-venv   cleanup all virtualenv'
@@ -36,7 +37,12 @@ test:
 	cd code && \
 	py.test -vra test
 
-clean: clean-pyc clean-venv
+run:
+	. $(VENV)/bin/activate && \
+	cd code && \
+	python main.py
+
+clean:  clean-pyc clean-venv
 
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +
