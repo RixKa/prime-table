@@ -7,7 +7,7 @@ from primes import get_n_primes, is_prime
 
 class TestIsPrime(object):
     def test_n_is_0(self):
-        n = random.choice([4, 6, 8, 10])
+        n = 0
         assert not is_prime(n)
 
     def test_n_is_prime(self):
@@ -27,9 +27,10 @@ class TestIsPrime(object):
 
 
 class TestGetPrimes(object):
+    @pytest.mark.skip(reason="Not Implemented")
     def test_n_equals_0(self):
         n = 0
-        assert True
+        assert get_n_primes(n) == []
 
     def test_low_value_n(self):
         n = random.randint(1, 100)
