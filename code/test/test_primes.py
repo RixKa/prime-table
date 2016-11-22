@@ -2,7 +2,7 @@ import pytest
 import random
 from primesieve import generate_n_primes
 
-from primes import get_n_primes, is_prime
+from helper.primes import get_n_primes, is_prime
 
 
 class TestIsPrime(object):
