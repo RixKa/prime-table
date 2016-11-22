@@ -1,8 +1,10 @@
+import sys
 import random
 import logging
 from tabulate import tabulate
 
 from helper.primes import get_n_primes
+from helper.input_handler import prompt_user, validate_input
 
 logger = logging.getLogger()
 logging.basicConfig(
@@ -13,18 +15,14 @@ logger.setLevel('INFO')
 
 
 def main():
-    # logger.info('prompting for user input')
-    # TODO: Prompt for n
+    logger.info('prompting for user input')
+    n = prompt_user()
 
-    # logger.info('validating input')
-    # TODO: check input is valid
-
-    logger.info('assigning random value for n')
-    n = random.randint(2,100)
-    logger.debug('n: {}'.format(n))
+    logger.info('validating input')
+    while not validate_input(n): n = prompt_user(True)
 
     logger.info('retrieving prime numbers')
-    primes = get_n_primes(n)
+    primes = get_n_primes(int(n))
     logger.debug('primes: {}'.format(primes))
 
     logger.info('generating table matrix')
@@ -32,9 +30,9 @@ def main():
     logger.debug('table: {}'.format(table))
 
     logger.info('generating table')
-    print tabulate(table, tablefmt='orgtbl')
+    return tabulate(table, tablefmt='orgtbl')
+
 
 if __name__  == '__main__':
-    logger.info('starting')
-    main()
-    logger.info('completed')
+    table = main()
+    print table
