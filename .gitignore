@@ -6,5 +6,6 @@
 ###############
 # Directories #
 ###############
+venv
 .cache
 __pycache__
