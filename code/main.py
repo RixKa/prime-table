@@ -1,5 +1,3 @@
-import sys
-import random
 import logging
 from tabulate import tabulate
 
@@ -8,7 +6,8 @@ from helper.input_handler import prompt_user, validate_input
 
 logger = logging.getLogger()
 logging.basicConfig(
-    format='[  %(asctime)s - %(levelname)-6s - %(module)s ]  %(message)s'
+    format='[  %(asctime)s - %(levelname)-6s - %(module)s ]  %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
 )
 
 logger.setLevel('INFO')

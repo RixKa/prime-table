@@ -46,6 +46,7 @@ clean:  clean-pyc clean-venv
 
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +
+	find . -name '.cache' -exec rm -fr {} +
 	find . -name '__pycache__' -exec rm -fr {} +
 
 clean-venv:
