@@ -1,2 +1,3 @@
+logging==0.4.9.6
 primesieve==1.1.0
 pytest==3.0.4
