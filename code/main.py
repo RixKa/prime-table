@@ -1,5 +1,6 @@
 import random
 import logging
+from tabulate import tabulate
 
 from helper.primes import get_n_primes
 
@@ -8,7 +9,7 @@ logging.basicConfig(
     format='[  %(asctime)s - %(levelname)-6s - %(module)s ]  %(message)s'
 )
 
-logger.setLevel('DEBUG')
+logger.setLevel('INFO')
 
 
 def main():
@@ -25,6 +26,13 @@ def main():
     logger.info('retrieving prime numbers')
     primes = get_n_primes(n)
     logger.debug('primes: {}'.format(primes))
+
+    logger.info('generating table matrix')
+    table = [[None] + primes] + [ [p2] + [ p1*p2 for p1 in primes ] for p2 in primes ]
+    logger.debug('table: {}'.format(table))
+
+    logger.info('generating table')
+    print tabulate(table, tablefmt='orgtbl')
 
 if __name__  == '__main__':
     logger.info('starting')
