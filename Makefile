@@ -16,7 +16,8 @@ help:
 	@echo '    make venv         install the package in a virtual environment'
 	@echo '    make reset        recreate the virtual environment'
 	@echo '    make test         run the test suite, report coverage'
-	@echo '    make run         run main.py'
+	@echo '    make run          run main.py'
+	@echo '    make run-debug    run main.py in debug mode'
 	@echo '    make clean        cleanup all temporary files'
 	@echo '    make clean-pyc    cleanup all python file artifacts'
 	@echo '    make clean-venv   cleanup all virtualenv'
@@ -41,6 +42,11 @@ run:
 	. $(VENV)/bin/activate && \
 	cd code && \
 	python main.py
+
+run-debug:
+	. $(VENV)/bin/activate && \
+        cd code && \
+        python main.py -d
 
 clean:  clean-pyc clean-venv
 

@@ -1,3 +1,4 @@
+import sys
 import logging
 from tabulate import tabulate
 
@@ -10,7 +11,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 
-logger.setLevel('INFO')
+logger.setLevel('DEBUG')
 
 
 def main():
@@ -33,5 +34,10 @@ def main():
 
 
 if __name__  == '__main__':
+    print "\nCoding Exercise - Prime tables\n"
+    if '-d' not in sys.argv:
+        logger.disabled = True
+
     table = main()
     print table
+    print "\n"
