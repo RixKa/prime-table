@@ -9,9 +9,9 @@ def prompt_user(retry=False):
 
 
 def validate_input(n):
-    if isinstance( n, ( int, long ) )  and n != 0:
+    if str(n).isdigit() and int(n) != 0:
         return True
-    elif str(n).isdigit() and int(n) != 0:
+    elif isinstance( n, ( int, long ) )  and n != 0:
         return True
     else:
         return False
