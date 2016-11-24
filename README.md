@@ -47,9 +47,9 @@ Testing instructions.
 ## Notes
 This project is designed to have modular components loosely coupled to ensure dependencies are kept to a minimum. The modularity of these components makes it easy to maintain and replace functions without it impacting too much on the remaining codebase.
 
-The logic in this codebase is separated into relevant modules and test modules, this aims for a highly cohesive codebase. The symmetry between the helper modules and test modules is intuitive: for example the `is_prime` function within the `primes.py` module has three tests in the `TestIsPrime` class within the `test_primes.py` module.
+The logic in this codebase is separated into relevant modules and test modules, this aims for a highly cohesive solution. The symmetry between the helper modules and test modules is intuitive: for example the `is_prime` function within the `primes.py` module has three tests in the `TestIsPrime` class within the `test_primes.py` module.
 
-Ultimately what I like about this project is that it is simple and slimline, by using TDD principles I could ensure that nothing was put in that wasn't needed. I am particularly fond on the modular approach which means I can switch out any components: for example if I were to attempt to write a new UI I will not need to make any modifications to the helper functions or tests.
+Ultimately what I like about this project is that it is simple and slimline, by using TDD principles I could ensure that nothing was put in that wasn't needed. I am particularly fond on the modular approach which means I can switch out any components: for example if I were to attempt to write a new UI I will not need to make any modifications to the helper functions or the existing tests.
 
 ## Future
 If I had more time I would have loved to write this in Elixir instead.
