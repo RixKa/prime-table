@@ -7,7 +7,7 @@ DEPS ?= $(PWD)/requirements.txt
 VENV ?= $(PWD)/venv
 MAKE := $(MAKE) --no-print-directory
 
-.PHONY: help venv reset test clean
+.PHONY: help venv reset test run run-debug clean clean-pyc clean-venv
 .DEFAULT_GOAL : help
 
 help:
@@ -31,7 +31,7 @@ venv:
 reset:
 	$(MAKE) clean
 	rm -rf "$(VENV)"
-	$(MAKE) install
+	$(MAKE) venv
 
 test:
 	. $(VENV)/bin/activate && \
