@@ -3,6 +3,8 @@
 ## Introduction
 This is an application that takes numeric input (N) from a user and outputs a multiplication table of (N) prime numbers.
 
+_Note: This project assumes virtualenv is installed_
+
 #### Example
 Input: `N = 3`
 
